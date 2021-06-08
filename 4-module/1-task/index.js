@@ -4,20 +4,17 @@
 // все li засунуть в ul
 
 function makeFriendsList(friends) {
-  // создаём <li> 
-  // внутрь помещаем созданную из объекта с помощью map
+
   const strLi = friends.map(_obj => {
-    const _li = document.createElement('li');
-    _li.innerText = `${_obj['firstName']} ${_obj['lastName']}`;
+    const _li = document.createElement('li'); // создаём <li> 
+    _li.innerText = `${_obj['firstName']} ${_obj['lastName']}`; // внутрь <li> помещаем строку созданную из объекта
     return _li
   });
 
-  // создаём ul
-  const ul = document.createElement('ul');
+  const ul = document.createElement('ul'); // создаём <ul>
 
-  // помещаем все созданные li в ul
   for (ele of strLi) {
-    ul.insertAdjacentElement('beforeend', ele);
+    ul.insertAdjacentElement('beforeend', ele); // помещаем все созданные <li> в <ul>
   }
 
   return ul
