@@ -18,7 +18,7 @@ function initCarousel() {
   // убираем левую стрелку при 1-м отображении
   ArrowCheck();
 
-  // определяем ширигу верхнего блока, чтобы сдвигать галлерею на эту ширину.
+  // определяем ширину верхнего блока, чтобы сдвигать галлерею на эту ширину.
   const carouselWidth = innerGallery.offsetWidth;
   function move() {
     innerGallery.style.transform = `translateX(${curPos * -carouselWidth}px)`;
