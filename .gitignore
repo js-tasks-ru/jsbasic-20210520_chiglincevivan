@@ -144,3 +144,6 @@ teacher.karma.conf.js
 teacher*
 
 package-lock.json
+
+# for extra lear
+extra/
