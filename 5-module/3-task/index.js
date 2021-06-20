@@ -11,8 +11,8 @@ function initCarousel() {
 
   // у крайних элементов убираем стрелки
   function ArrowCheck() {
-    (curPos == startSlide) ? leftControl.style.display = 'none' : leftControl.style.display = '';
-    (curPos == lastSlide) ? rightControl.style.display = 'none' : rightControl.style.display = '';
+    (curPos == startSlide) ? leftControl.style.display = 'none' : leftControl.style.display = null;
+    (curPos == lastSlide) ? rightControl.style.display = 'none' : rightControl.style.display = null;
   }
 
   // убираем левую стрелку при 1-м отображении
