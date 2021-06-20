@@ -14,7 +14,8 @@ function makeFriendsList(friends) {
   const ul = document.createElement('ul'); // создаём <ul>
 
   for (ele of strLi) {
-    ul.insertAdjacentElement('beforeend', ele); // помещаем все созданные <li> в <ul>
+    // ul.insertAdjacentElement('beforeend', ele); // помещаем все созданные <li> в <ul>
+    ul.append(ele);
   }
 
   return ul
