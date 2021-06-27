@@ -1,49 +1,24 @@
-/**
- * Компонент, который реализует таблицу
- * с возможностью удаления строк
- *
- * Пример одного элемента, описывающего строку таблицы
- *
- *      {
- *          name: 'Ilia',
- *          age: 25,
- *          salary: '1000',
- *          city: 'Petrozavodsk'
- *      }
- *
- */
 export default class UserTable {
   constructor(rows) {
+    this.data = rows;
+    this.elem = document.createElement('TABLE');
+    this.render();
 
+    this.elem.addEventListener('click', (event) => {
+      if (event.target.tagName === 'BUTTON') event.target.closest('tr').remove();
+    });
   }
+
+  render() {
+    const thead = document.createElement('THEAD');
+    thead.insertAdjacentHTML('beforeend', '<tr><th>Имя</th><th>Возраст</th><th>Зарплата</th><th>Город</th><th></th></tr>');
+
+    const tbody = document.createElement('TBODY');
+    const trs = this.data.map(_obj => `<tr><td>${_obj.name}</td><td>${_obj.age}</td><td>${_obj.salary}</td><td>${_obj.city}</td><td><button>X</button></td></tr>`);
+    trs.forEach(ele => tbody.insertAdjacentHTML('beforeend', ele));
+
+    this.elem.append(thead);
+    this.elem.append(tbody);
+  }
+
 }
-
-let rows = [
-  {
-      name: 'Вася',
-      age: 25,
-      salary: 1000,
-      city: 'Самара'
-  },
-  {
-      name: 'Петя',
-      age: 30,
-      salary: 1500,
-      city: 'Москва'
-  }
-];
-
-// table 
-// tr
-// td name
-// td age
-// td salary
-// td city
-// td button
-
-
-const newMap = rows
-  .map(element => `<tr><td>${element.name}</td><td>${element.age}</td><td>${element.salary}</td><td>${element.city}</td><td><button>X</button></td></tr>`).join('');
-
-
-document.body.insertAdjacentHTML('beforeend', `<table>${newMap}</table>`);
