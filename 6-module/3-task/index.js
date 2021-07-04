@@ -43,13 +43,6 @@ export default class Carousel {
     return carousel
   }
 
-  // arrowCheck() {
-  //   const rightArrow = this.elem.querySelector('.carousel__arrow_right');
-  //   const leftArrow = this.elem.querySelector('.carousel__arrow_left');
-  //   (this.slidePos == 0) ? leftArrow.style.display = 'none' : leftArrow.style.display = null;
-  //   (this.slidePos == this.lastSlide) ? rightArrow.style.display = 'none' : rightArrow.style.display = null;
-  // }
-
   event() {
     this.elem.addEventListener('click', (event) => {
       if (event.target.closest('.carousel__button')) {
