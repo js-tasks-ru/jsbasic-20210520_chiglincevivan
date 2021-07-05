@@ -6,18 +6,19 @@ function initCarousel() {
 
   const totalSlides = innerGallery.querySelectorAll('.carousel__slide').length;
   const startSlide = 0;
+  const lastSlide = totalSlides - 1;
   let curPos = startSlide;
 
   // у крайних элементов убираем стрелки
   function ArrowCheck() {
-    (curPos == startSlide) ? leftControl.style.display = 'none' : leftControl.style.display = '';
-    (curPos == totalSlides - 1) ? rightControl.style.display = 'none' : rightControl.style.display = '';
+    (curPos == startSlide) ? leftControl.style.display = 'none' : leftControl.style.display = null;
+    (curPos == lastSlide) ? rightControl.style.display = 'none' : rightControl.style.display = null;
   }
 
   // убираем левую стрелку при 1-м отображении
   ArrowCheck();
 
-  // определяем ширигу верхнего блока, чтобы сдвигать галлерею на эту ширину.
+  // определяем ширину верхнего блока, чтобы сдвигать галлерею на эту ширину.
   const carouselWidth = innerGallery.offsetWidth;
   function move() {
     innerGallery.style.transform = `translateX(${curPos * -carouselWidth}px)`;

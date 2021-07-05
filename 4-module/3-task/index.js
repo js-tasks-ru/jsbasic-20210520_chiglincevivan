@@ -1,7 +1,7 @@
 function highlight(table) {
   for (tr of table.tBodies[0].querySelectorAll('tr')) {
     const status = tr.querySelector('td:nth-child(4)');
-    if (!status.hasAttribute("data-available")) tr.setAttribute('hidden', '');
+    if (!status.hasAttribute("data-available")) tr.hidden = true;
     if (status.dataset.available == 'true') tr.classList.add('available');
     if (status.dataset.available == 'false') tr.classList.add('unavailable');
 
